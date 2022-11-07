@@ -21,6 +21,13 @@
         "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
-        "express": "^4.18.2"
+        "body-parser": "^1.20.1",
+        "colors": "^1.4.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "helmet": "^6.0.0",
+        "mongoose": "^6.7.1",
+        "morgan": "^1.10.0"
     }
 }
