@@ -8,7 +8,7 @@ morgan = require "morgan"
 helmet = require "helmet"
 bodyParser = require "body-parser"
 connectDB = require "./configs/connect.db.coffee"
-User = require "./models/user.model.coffee"
+userRoute = require "./routes/user.route.coffee"
 dotenv.config()
 app = express()
 app.use(bodyParser.json())
@@ -18,9 +18,6 @@ app.use(morgan("dev"))
 app.use(helmet())
 port = process.env.PORT
 connectDB()
-app.get "/", (req, res) ->
-    res.send(await User.find())
-
+app.use "/api/users", userRoute
 app.listen port
-
 console.log colors.green("Server running at http://localhost:#{port}")
