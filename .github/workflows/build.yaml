@@ -1,7 +1,13 @@
 name: node_coffee
 on:
   push:
-    branch: [master]
+    paths:
+      - '!README.md'
+      - '**.coffee'
+    branches:
+      - 'master'
+      - '!dev'
+  workflow_dispatch:
 jobs:
   docker:
     runs-on: ubuntu-latest
